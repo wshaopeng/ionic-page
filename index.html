@@ -1,0 +1,549 @@
+<html ng-app="ionicApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <title>0184</title>
+    <link href="css/ionic.min.css" rel="stylesheet">
+    <link href="css/wulian.css" rel="stylesheet">
+    <script src="js/ionic.bundle.min.js"></script>
+    <script type="text/javascript">
+        angular.module('ionicApp', ['ionic'])
+                .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
+                    $ionicConfigProvider.platform.ios.tabs.position('bottom');
+                    $ionicConfigProvider.platform.android.tabs.position('bottom');
+                    $stateProvider
+                            .state('index', {
+                                url: "/index",
+                               // abstract: true,
+                                templateUrl: "templates/index.html"
+                            })
+                            .state('index.footInWlTab', {
+                                url: "/footInWlTab",
+                                views: {
+                                    'index-footInWlTab': {
+                                        templateUrl: "templates/footInWlTab.html"
+
+                                    }
+                                }
+                            })
+                            .state('index.footInWlTab.TopInWlTab',{
+                                url: "/TopInWlTab",
+                                views: {
+                                    'TopInWlTab': {
+                                        templateUrl: "templates/TopInWlTab.html",
+                                        controller:'SlideController'
+                                        //controller: 'HomeTabCtrl'
+                                    }
+
+                                }
+                            })
+                            .state('fruits', {
+                                url: "/fruits",
+                                templateUrl: "templates/fruits.html"
+                            })
+                            .state('lecture', {
+                                url: "/lecture",
+                                templateUrl: "templates/lecture.html"
+                            })
+                            .state('acqierement', {
+                                url: "/acqierement",
+                                templateUrl: "templates/acqierement.html"
+                            })
+                            .state('HealthProject', {
+                                url: "/HealthProject",
+                                templateUrl: "templates/HealthProject.html"
+                            })
+                            .state('AgricultureProject', {
+                                url: "/AgricultureProject",
+                                templateUrl: "templates/AgricultureProject.html"
+                            })
+                            .state('ConstructionProject', {
+                                url: "/ConstructionProject",
+                                templateUrl: "templates/ConstructionProject.html"
+                            })
+
+                            .state('index.footInWlTab.TopTzWlTab',{
+                                url: "/TopTzWlTab",
+                                views: {
+                                    'TopTzWlTab': {
+                                        templateUrl: "templates/TopTzWlTab.html",
+                                        controller:'SlideControllerTwo'
+                                    }
+
+                                }
+                            })
+
+                            .state('index.footInWlTab.TopCyWlTab', {
+                                        url: "/TopCyWlTab",
+                                        views: {
+                                            'TopCyWlTab': {
+                                                templateUrl: "templates/TopCyWlTab.html"
+                                            }
+                                        }
+                                    })
+                            .state('index.footInfoTab',{
+                                url: "/footInfoTab",
+                                views: {
+                                    'footInfoTab': {
+                                        templateUrl: "templates/footInfoTab.html"
+                                    }
+                                }
+                            })
+                            .state('index.footSolTab',{
+                                url: "/footSolTab ",
+                                views: {
+                                    'footSolTab': {
+                                        templateUrl: "templates/footSolTab.html"
+                                    }
+                                }
+                            })
+                            .state('index.footExpertTab',{
+                                url: "/footExpertTab",
+                                views: {
+                                    'footExpertTab': {
+                                        templateUrl: "templates/footExpertTab.html"
+                                    }
+                                }
+                            });
+
+
+                    $urlRouterProvider.otherwise("/index/footInWlTab/TopInWlTab");
+
+                })
+
+             .controller('SlideController', function($scope) {
+                 //console.log(000);
+                 $scope.myActiveSlide = 0;
+
+
+        })
+                .controller('SlideControllerTwo', function($scope) {
+                   // console.log(111)
+                    $scope.myActiveSlideTwo = 1;
+
+                })
+               /* .controller('aaa',function($scope){
+
+                })*/
+    </script>
+</head>
+
+<body >
+
+<ion-nav-bar class="bar-positive">
+    <ion-nav-buttons side="left">
+        <img src="走进五莲/images/mao.jpg" style="width: 30px;height: 30px;margin-top: 5px;">
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="right">
+        <a class="icon ion-ios-search-strong" style="font-size: 25px;margin-top: 5px;">
+        </a>
+    </ion-nav-buttons>
+</ion-nav-bar>
+<ion-nav-view></ion-nav-view>
+
+<script id="templates/index.html" type="text/ng-template">
+
+    <ion-tabs class="tabs-icon-top tabs-positive bootTab">
+
+        <ion-tab title="走进五莲" icon="ion-navicon-round" ui-sref="index.footInWlTab.TopInWlTab">
+           <ion-nav-view name="index-footInWlTab" class="enterWL" >
+            </ion-nav-view>
+        </ion-tab>
+        <ion-tab title="资讯直通车" icon="ion-ios-plus-outline" ui-sref="index.footInfoTab">
+            <ion-nav-view name="footInfoTab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="招才引智" icon="ion-ios-bell-outline" ui-sref="index.footSolTab">
+            <ion-nav-view name="footSolTab"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="专家智库" icon="ion-ios-world" ui-sref="index.footExpertTab">
+            <ion-nav-view name="footExpertTab"></ion-nav-view>
+        </ion-tab>
+    </ion-tabs>
+
+</script>
+<script id="templates/footInWlTab.html" type="text/ng-template">
+        <ion-tabs class="tabs-top" >
+            <ion-tab title="走进五莲" ui-sref="index.footInWlTab.TopInWlTab">
+                <ion-nav-view name="TopInWlTab"></ion-nav-view>
+            </ion-tab>
+            <ion-tab title="投资五莲" ui-sref="index.footInWlTab.TopTzWlTab">
+                <ion-nav-view name="TopTzWlTab"></ion-nav-view>
+            </ion-tab>
+            <ion-tab title="畅游五莲" ui-sref="index.footInWlTab.TopCyWlTab">
+                <ion-nav-view name="TopCyWlTab"></ion-nav-view>
+            </ion-tab>
+        </ion-tabs>
+</script>
+<script id="templates/TopInWlTab.html" type="text/ng-template" animation="slide-left-right-ios7" ng-controller="SlideController">
+    <ion-view view-title="走进五莲">
+        <ion-content >
+
+                <ion-slide-box active-slide="myActiveSlide" class="enterWlTop" does-continue="true" slide-interval>
+                    <ion-slide>
+                        <div class="box carouselFir"></div>
+                    </ion-slide>
+                    <ion-slide>
+                        <div class="box carouselSec"></div>
+                    </ion-slide>
+                    <ion-slide>
+                        <div class="box carouselThi"></div>
+                    </ion-slide>
+
+                </ion-slide-box>
+
+            <div class="content ionic-pseudo enterWlMain" >
+
+                <div class="list">
+
+                    <a class="item item-thumbnail-left" ui-sref="fruits">
+                        <img src="images/zhaiyingtao.jpg">
+                        <h2>又是一年樱桃红</h2>
+                        <p>Blue Album</p>
+                    </a>
+                    <a class="item item-thumbnail-left" ui-sref="lecture">
+                        <img src="images/huiyi.jpg">
+                        <h2>“两学一做”争先锋</h2>
+                        <p>Siamese Dream</p>
+                    </a>
+
+                    <a class="item item-thumbnail-left" ui-sref="acqierement">
+                        <img src="images/wudao.jpg">
+                        <h2>全县首届最美家庭才艺展示</h2>
+                        <p>Nevermind</p>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div id="enterWlFoot">
+                <ul class="fourLayer">
+                    <div class="backLeft">
+                        <li class="backLayerLT backLeftTop">
+                            <a>五莲要闻</a>
+                        </li>
+                        <li class="backLayerLB backLeftBot">
+                            <a>五莲地图</a>
+                        </li>
+                    </div>
+                    <div class="backRight">
+                        <li class="backLayerLT backRightTop">
+                            <a>魅力五莲</a>
+                        </li>
+                        <li class="backLayerLB backRightBot">
+                            <a>五莲名人</a>
+                        </li>
+                    </div>
+
+                </ul>
+
+            </div>
+        </ion-content>
+    </ion-view>
+</script>
+<script id="templates/fruits.html" type="text/ng-template">
+
+<ion-view hide-nav-bar=true>
+
+    <ion-header-bar align-title="center" class="bar-light">
+        <a class="backIcon icon icon-left ion-chevron-left" ui-sref="index.footInWlTab.TopInWlTab" ></a>
+        <h1 class="title">又是一年樱桃红</h1>
+        <div class="button button-clear">
+            <a class=" icon ion-ios-more"></a>
+        </div>
+    </ion-header-bar>
+    <ion-content class="contentCircle">
+        <p> 樱桃的食疗作用<br>
+
+            　　樱桃补中益气，祛风胜湿。主治病后体虚气弱，气短心悸，倦怠食少，咽干口渴，及风湿腰腿疼痛，四肢不仁，关节屈伸不利，冻疮等病症。<br>
+
+            　　1．抗贫血，促进血液生成。樱桃含铁量高，位于各种水果之首。铁是合成人体血红蛋白、肌红蛋白的原料，
+            在人体免疫、蛋白质合成及能量代谢等过程中，发挥着重要的作用，同时也与大脑及神经功能、衰老过程等有着密切关系。
+            常食樱桃可补充体内对铁元素量的需求，促进血红蛋白再生，既可防治缺铁性贫血，又可增强体质，健脑益智。</p>
+    </ion-content>
+    <div class="bar bar-footer commentary">
+        <div class="comment" ></div>
+        <div class="conmentIcon">
+            <a class="ion-ios-star-outline"></a>
+            <a class=" icon ion-android-open"></a>
+        </div>
+
+    </div>
+</ion-view>
+</script>
+<script id="templates/lecture.html" type="text/ng-template">
+
+    <ion-view hide-nav-bar=true>
+
+        <ion-header-bar align-title="center" class="bar-light">
+            <a class="backIcon icon icon-left ion-chevron-left" ui-sref="index.footInWlTab.TopInWlTab" ></a>
+            <h1 class="title">“两学一做”争先锋</h1>
+            <div class="button button-clear">
+                <a class=" icon ion-ios-more"></a>
+            </div>
+        </ion-header-bar>
+        <ion-content class="contentCircle">
+            <p> 两学一做<br>
+
+                　　樱桃补中益气，祛风胜湿。主治病后体虚气弱，气短心悸，倦怠食少，咽干口渴，及风湿腰腿疼痛，四肢不仁，关节屈伸不利，冻疮等病症。<br>
+
+                　　“两学一做”学习教育，具体指的是：“1、学习共产党党章党规，2、学习贯彻习近平总书记系列重要讲话精神，3、做合格党员”。
+                2016年2月，中共中央办公厅印发了《关于在全体党员中开展“学党章党规、学系列讲话，做合格党员”学习教育方案》，
+                并发出通知，要求各地区各部门认真贯彻执行。</p>
+        </ion-content>
+        <div class="bar bar-footer commentary">
+            <div class="comment" ></div>
+            <div class="conmentIcon">
+                <a class="ion-ios-star-outline"></a>
+                <a class=" icon ion-android-open"></a>
+            </div>
+
+        </div>
+    </ion-view>
+</script>
+<script id="templates/acqierement.html" type="text/ng-template">
+
+
+    <ion-view hide-nav-bar=true>
+
+        <ion-header-bar align-title="center" class="bar-light">
+            <a class="backIcon icon icon-left ion-chevron-left" ui-sref="index.footInWlTab.TopInWlTab" ></a>
+            <h1 class="title">全县首届最美家庭才艺展示</h1>
+            <div class="button button-clear">
+                <a class=" icon ion-ios-more"></a>
+            </div>
+        </ion-header-bar>
+        <ion-content class="contentCircle">
+            <p> 才艺展示<br>
+
+                　　樱桃补中益气，祛风胜湿。主治病后体虚气弱，气短心悸，倦怠食少，咽干口渴，及风湿腰腿疼痛，四肢不仁，关节屈伸不利，冻疮等病症。<br>
+
+                　　1．抗贫血，促进血液生成。樱桃含铁量高，位于各种水果之首。铁是合成人体血红蛋白、肌红蛋白的原料，
+                在人体免疫、蛋白质合成及能量代谢等过程中，发挥着重要的作用，同时也与大脑及神经功能、衰老过程等有着密切关系。
+                常食樱桃可补充体内对铁元素量的需求，促进血红蛋白再生，既可防治缺铁性贫血，又可增强体质，健脑益智。</p>
+        </ion-content>
+        <div class="bar bar-footer commentary">
+            <div class="comment" ></div>
+            <div class="conmentIcon">
+                <a class="ion-ios-star-outline"></a>
+                <a class=" icon ion-android-open"></a>
+            </div>
+
+        </div>
+    </ion-view>
+</script>
+<script id="templates/TopTzWlTab.html" type="text/ng-template" animation="slide-left-right-ios7" ng-controller="SlideControllerTwo">
+    <ion-view view-title="走进五莲" >
+
+        <ion-content >
+
+            <ion-slide-box active-slide="myActiveSlideTwo" class="enterWlTop">
+                <ion-slide>
+                    <div class="box carouselFir"></div>
+                </ion-slide>
+                <ion-slide>
+                    <div class="box carouselSec"></div>
+                </ion-slide>
+                <ion-slide>
+                    <div class="box carouselThi"></div>
+                </ion-slide>
+
+            </ion-slide-box>
+            <!--<ion-slide-box >
+                  <ion-slide>
+                     <div class="box blue"><h1>BLUE</h1></div>
+                   </ion-slide>
+                   <ion-slide>
+                     <div class="box yellow"><h1>YELLOW</h1></div>
+                   </ion-slide>
+                   <ion-slide>
+                     <div class="box pink"><h1>PINK</h1></div>
+                   </ion-slide>
+                 </ion-slide-box>-->
+
+            <div class="content ionic-pseudo" class="enterWlMain">
+
+                <div class="list">
+
+                    <a class="item item-thumbnail-left" ui-sref="HealthProject">
+                        <img src="images/caichaye.jpg">
+                        <h2>马耳山中草药养生基地项目</h2>
+                        <p>Blue Album</p>
+                    </a>
+                    <a class="item item-thumbnail-left" ui-sref="AgricultureProject">
+                        <img src="images/dapeng.jpg">
+                        <h2>龙潭湖休闲农业综合体项目</h2>
+                        <p>Siamese Dream</p>
+                    </a>
+
+                    <a class="item item-thumbnail-left" ui-sref="ConstructionProject">
+                        <img src="images/shanhua.jpg">
+                        <h2>大型游乐园建设项目</h2>
+                        <p>Nevermind</p>
+                    </a>
+                </div>
+            </div>
+            <div class="enterWlBoot">
+                <div class="newsDynamic">
+                    <div class="h4 title">最新动态</div>
+                </div>
+
+                <div class="content">
+
+                    <ul class="list newsArticle">
+
+                        <li class="item">
+                            <a class="newsleft">我县召开招商办主任会议</a>
+                            <p class="newsright">05-19</p>
+                        </li>
+                        <li class="item">
+                            <a class="newsleft">我县召开全县项目招引建设</a>
+                            <p class="newsright">05-19</p>
+
+                        </li>
+                        <li class="item">
+                            <a class="newsleft">我县召开招商办主任会议</a>
+                            <p class="newsright">05-19</p>
+
+                        </li>
+                        <li class="item">
+                            <a class="newsleft">我县召开第二次招商引资项目</a>
+                            <p class="newsright">05-19</p>
+
+                        </li>
+                        <li class="item">
+                            <a class="newsleft">我县召开招商项目评审</a>
+                            <p class="newsright">05-19</p>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+</ion-content>
+    </ion-view>
+</script>
+<script id="templates/HealthProject.html" type="text/ng-template">
+
+    <ion-view hide-nav-bar=true>
+
+        <ion-header-bar align-title="center" class="bar-light">
+            <a class="backIcon icon icon-left ion-chevron-left" ui-sref="index.footInWlTab.TopTzWlTab" ></a>
+            <h1 class="title">马耳山中草药养生基地项目</h1>
+            <div class="button button-clear">
+                <a class=" icon ion-ios-more"></a>
+            </div>
+        </ion-header-bar>
+        <ion-content class="contentCircle">
+            <p> 樱桃的食疗作用<br>
+
+                　　樱桃补中益气，祛风胜湿。主治病后体虚气弱，气短心悸，倦怠食少，咽干口渴，及风湿腰腿疼痛，四肢不仁，关节屈伸不利，冻疮等病症。<br>
+
+                　　1．抗贫血，促进血液生成。樱桃含铁量高，位于各种水果之首。铁是合成人体血红蛋白、肌红蛋白的原料，
+                在人体免疫、蛋白质合成及能量代谢等过程中，发挥着重要的作用，同时也与大脑及神经功能、衰老过程等有着密切关系。
+                常食樱桃可补充体内对铁元素量的需求，促进血红蛋白再生，既可防治缺铁性贫血，又可增强体质，健脑益智。</p>
+        </ion-content>
+        <div class="bar bar-footer commentary">
+            <div class="comment" ></div>
+            <div class="conmentIcon">
+                <a class="ion-ios-star-outline"></a>
+                <a class=" icon ion-android-open"></a>
+            </div>
+
+        </div>
+    </ion-view>
+</script>
+<script id="templates/AgricultureProject.html" type="text/ng-template">
+
+    <ion-view hide-nav-bar=true>
+
+        <ion-header-bar align-title="center" class="bar-light">
+            <a class="backIcon icon icon-left ion-chevron-left" ui-sref="index.footInWlTab.TopTzWlTab" ></a>
+            <h1 class="title">龙潭湖休闲农业综合体项目</h1>
+            <div class="button button-clear">
+                <a class=" icon ion-ios-more"></a>
+            </div>
+        </ion-header-bar>
+        <ion-content class="contentCircle">
+            <p> 樱桃的食疗作用<br>
+
+                　　樱桃补中益气，祛风胜湿。主治病后体虚气弱，气短心悸，倦怠食少，咽干口渴，及风湿腰腿疼痛，四肢不仁，关节屈伸不利，冻疮等病症。<br>
+
+                　　1．抗贫血，促进血液生成。樱桃含铁量高，位于各种水果之首。铁是合成人体血红蛋白、肌红蛋白的原料，
+                在人体免疫、蛋白质合成及能量代谢等过程中，发挥着重要的作用，同时也与大脑及神经功能、衰老过程等有着密切关系。
+                常食樱桃可补充体内对铁元素量的需求，促进血红蛋白再生，既可防治缺铁性贫血，又可增强体质，健脑益智。</p>
+        </ion-content>
+        <div class="bar bar-footer commentary">
+            <div class="comment" ></div>
+            <div class="conmentIcon">
+                <a class="ion-ios-star-outline"></a>
+                <a class=" icon ion-android-open"></a>
+            </div>
+
+        </div>
+    </ion-view>
+</script>
+<script id="templates/ConstructionProject.html" type="text/ng-template">
+
+    <ion-view hide-nav-bar=true>
+
+        <ion-header-bar align-title="center" class="bar-light">
+            <a class="backIcon icon icon-left ion-chevron-left" ui-sref="index.footInWlTab.TopTzWlTab" ></a>
+            <h1 class="title">大型游乐园建设项目</h1>
+            <div class="button button-clear">
+                <a class=" icon ion-ios-more"></a>
+            </div>
+        </ion-header-bar>
+        <ion-content class="contentCircle">
+            <p> 樱桃的食疗作用<br>
+
+                　　樱桃补中益气，祛风胜湿。主治病后体虚气弱，气短心悸，倦怠食少，咽干口渴，及风湿腰腿疼痛，四肢不仁，关节屈伸不利，冻疮等病症。<br>
+
+                　　1．抗贫血，促进血液生成。樱桃含铁量高，位于各种水果之首。铁是合成人体血红蛋白、肌红蛋白的原料，
+                在人体免疫、蛋白质合成及能量代谢等过程中，发挥着重要的作用，同时也与大脑及神经功能、衰老过程等有着密切关系。
+                常食樱桃可补充体内对铁元素量的需求，促进血红蛋白再生，既可防治缺铁性贫血，又可增强体质，健脑益智。</p>
+        </ion-content>
+        <div class="bar bar-footer commentary">
+            <div class="comment" ></div>
+            <div class="conmentIcon">
+                <a class="ion-ios-star-outline"></a>
+                <a class=" icon ion-android-open"></a>
+            </div>
+
+        </div>
+    </ion-view>
+</script>
+<script id="templates/TopCyWlTab.html" type="text/ng-template">
+    <ion-view view-title="走进五莲">
+        <ion-content>
+            <h4>畅游五莲</h4>
+        </ion-content>
+    </ion-view>
+</script>
+<script id="templates/footInfoTab.html" type="text/ng-template">
+    <ion-view view-title="资讯直通车">
+        <ion-content class="padding">
+            <h3>资讯直通车</h3>
+        </ion-content>
+    </ion-view>
+</script>
+<script id="templates/footSolTab.html" type="text/ng-template">
+    <ion-view view-title="招才引智">
+        <ion-content>
+            <h4>招才引智</h4>
+        </ion-content>
+    </ion-view>
+</script>
+<script id="templates/footExpertTab.html" type="text/ng-template">
+    <ion-view view-title="专家智库">
+        <ion-content >
+            <p>
+                <a class="button icon icon-right ion-chevron-right">专家智库</a>
+            </p>
+        </ion-content>
+    </ion-view>
+</script>
+</body>
+</html>

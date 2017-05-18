@@ -1,0 +1,189 @@
+/*.enterWL{
+    background-color: #9e9e9e !important;
+}*/
+a{
+    text-decoration: none;
+}
+html{
+    font-size: 62.5% !important;
+}
+h2{
+    font-size: 1.6rem !important;
+}
+p{
+    font-size: 1.4rem !important;
+}
+.tabs-positive .enterWL .tabs{
+    background-color:#ffffff;
+}
+ .bootTab .tabs{
+     background-color: #e8e8e8;
+ }
+.bootTab .tabs a{
+    color: #111111;
+}
+.tabs-positive>.tabs, .tabs.tabs-positive{
+    border-color:snow;
+    background-image: none;
+}
+span,a,p,h1,h2,h3,h4,h5,h6{
+    font-family: Arial, sans-serif !important;
+}
+/*body{
+    font-family: Arial, sans-serif !important;
+}*/
+.slider {
+    height: 27%;
+}
+.slider-slide {
+    color: #000;
+    background-color: #fff;
+    text-align: center;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+}
+.slider .slider-pager{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+}
+.list .item-thumbnail-left>img{
+    height:63%;
+}
+.carouselFir{
+    width: 100%;
+    height: 15rem;
+    background: url("../images/fu.jpg"),center;
+    position: relative;
+    background-size: cover;
+}
+.carouselSec {
+    width: 100%;
+    background: url("../images/shanshui.jpg"),center ;
+    height: 15rem;
+    position: relative;
+    background-size: cover;
+}
+.carouselThi {
+    width: 100%;
+    background: url("../images/lvyou.jpg"),center;
+    height: 15rem;
+    /*//background-position: center;*/
+    position: relative;
+    background-size: cover;
+}
+.backLayer{
+    width: 50%;
+    height: 6rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: indianred;
+    text-align: center;
+}
+.fourLayer li {
+    color:#e8e8e8;
+    display: block;
+    width: 100%;
+    height: 6rem;
+    text-align: center;
+    margin: 1rem 0rem;
+    line-height: 4rem;
+    font-size: 2rem;
+    padding: 1rem 2.5rem;
+}
+#enterWlFoot{
+    width:100%;
+}
+.backLeft {
+    float: left;
+    margin: 0%4%4%4%;
+    width: 44%;
+}
+
+.backRight {
+    float: left;
+    margin: 0%4%4%0;
+    width: 44%;
+}
+.backLeftTop{
+    background-color: indianred;
+}
+.backLeftBot {
+    background-color: aquamarine;
+}
+
+.backRightTop {
+    background-color: #0a9ec7;
+}
+
+.backRightBot {
+    background-color: mediumpurple;
+}
+
+/*
+ion-nav-bar .header-item{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background-size: cover;
+    background-image:url("../images/mao.jpg");!important;
+    background-position: left 5px;
+}*/
+/*
+ion-nav-bar .bar-header .hide{
+    display: block!important;
+}*/
+.newsArticle li{
+   list-style-type: disc;
+    padding:0.8rem 1.2rem;
+}
+.newsDynamic{
+    width: 100%;
+    display: inline-block;
+    background:#e4e5e7;
+
+}
+.bar .back-button.hide{
+    display: block !important;
+}
+.newsright{
+    float: right;
+}
+/*.headerIcon a{
+    margin-top: 2%;
+    font-size: 2rem;
+
+}*/
+.backIcon{
+    margin-top: 3%;
+    font-size: 2.0rem;
+    padding:0.2rem;
+}
+.contentCircle p{
+    font-size: 1rem !important;
+    padding: 1.5rem;
+}
+.commentary {
+    background-color: #EFEFEF;
+
+}
+.commentary a{
+    opacity: 0.7;
+    font-size: 25px
+}
+.conmentIcon{
+    top: 0.9rem;
+    position: absolute;
+    right: 1rem;
+}
+.tabs-striped.tabs-positive .tab-item {
+    color: #444;
+    opacity: 1;
+}
+.tab-item-active{
+    color: #035eff !important;
+    border-bottom: 1px #0058FF solid;
+    text-decoration: none;
+}
+
